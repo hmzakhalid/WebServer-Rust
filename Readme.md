@@ -1,5 +1,10 @@
 # A Webserver made in Rust
 
+<!-- load image -->
+![Rust](https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white)
+
+![Hmzakhalid](./imgs/1.png)
+
 This is a simple webserver made in Rust. It is a learning project for me to learn Rust.
 
 ## How it works
