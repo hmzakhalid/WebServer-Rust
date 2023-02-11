@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HMZAKHALID</title>
+    <style>
+        body {
+            background-color: black;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        h1 {
+            color: white;
+            font-size: 5rem;
+            font-family: "Space Mono", monospace;
+            letter-spacing: 12px;
+        }
+
+        h2 {
+            color: white;
+            font-size: 2rem;
+            font-family: "Space Mono", monospace;
+            margin: 0;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+            letter-spacing: 12px;
+        }
+
+        span {
+            font-family: "Space Mono", monospace;
+            letter-spacing: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 id="HMZAKHALID" data-value="HMZAKHALID">HMZAKHALID</h1>
+    <h2 id="GITHUB"><a data-value="GITHUB" rel="noreferrer" target="_blank" href="https://github.com/hmzakhalid">GITHUB</a></h2>
+    <h2 id="LINKEDIN"><a data-value="LINKEDIN" rel="noreferrer" target="_blank" href="https://linkedin.com/in/hmzakhalid">LINKEDIN</a></h2>
+    <h2 id="TWITTER"><a data-value="TWITTER" rel="noreferrer" target="_blank" href="https://twitter.com/hmzakhalid">TWITTER</a></h2>
+
+    <script type="module" src="script.js">  </script>
+    <script>
+        
+        function hackEffect(id) {
+            const letters = "0ABC1DEF2GHI3JKL4MNO5PKQ6STU7VW8X9YZ";
+            let interval = null;
+            document.getElementById(id).onmouseover = (e) => {
+                let itr = 0;
+                clearInterval(interval);
+                interval = setInterval(() => {
+                    e.target.innerText = e.target.innerText
+                        .split("")
+                        .map((letter, index) => {
+                            if (index < itr) {
+                                return e.target.dataset.value[index];
+                            }
+                            return letters[Math.floor(Math.random() * 35)]
+                        })
+                        .join("");
+                    if (itr >= e.target.dataset.value.length) {
+                        clearInterval(interval);
+                    }
+                    itr += 1 / 2;
+                }, 50);
+            };   
+        }
+        hackEffect("HMZAKHALID");
+        hackEffect("GITHUB");
+        hackEffect("LINKEDIN");
+        hackEffect("TWITTER");
+        
+        
+
+    </script>
+
+</body>
+
+</html>
